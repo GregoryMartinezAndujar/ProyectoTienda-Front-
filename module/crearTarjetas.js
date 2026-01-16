@@ -5,12 +5,23 @@ console.log(productos);
 let lista = JSON.parse(localStorage.getItem("listaCarrito")) || []; //creo el array en localStorage
 let contenedor = document.createElement("div");
 contenedor.classList.add("caja-padre-targeta");
-
+let header = document.createElement("header");
+let nav = document.createElement("nav");
+let ul = document.createElement("ul");
+let li = document.createElement("li");
+let a = document.createElement("a");
+a.href = "../index.html";
+a.appendChild(li);
+li.textContent = "Volver al inicio";
+ul.appendChild(a);
+nav.appendChild(ul);
 let titulo = document.createElement("h1");
 titulo.textContent = "Productos Disponibles";
 titulo.classList.add("cabecera-productos");
 titulo.id = "cabecera-productos";
-document.body.appendChild(titulo);
+header.appendChild(titulo);
+header.appendChild(nav);
+document.body.appendChild(header);
 
 function crearTarjetas(producto) {
   let tarjeta = document.createElement("div");

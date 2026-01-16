@@ -24,7 +24,20 @@ let titulo = document.createElement("h1");
 titulo.textContent = "Cesta de la compra";
 titulo.classList.add("cabecera-productos");
 titulo.id = "cabecera-productos";
-document.body.appendChild(titulo);
+let header = document.createElement("header");
+let nav = document.createElement("nav");
+let ul = document.createElement("ul");
+let li = document.createElement("li");
+let a = document.createElement("a");
+a.href = "../index.html";
+a.appendChild(li);
+li.textContent = "Volver al inicio";
+ul.appendChild(a);
+nav.appendChild(ul);
+header.appendChild(nav);
+header.appendChild(titulo);
+document.body.appendChild(header);
+
 function crearElemtosCarrito(producto) {
   total += parseInt(producto.price);
   let tarjeta = document.createElement("div");
@@ -38,7 +51,6 @@ function crearElemtosCarrito(producto) {
 
   let descripcion = document.createElement("p");
   descripcion.textContent = producto.description;
-
   let boton = document.createElement("button");
   boton.textContent = "Borrar de la cesta";
   boton.classList.add("boton-borrado");
