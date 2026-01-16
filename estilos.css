@@ -119,7 +119,7 @@ h1 {
   }
 }
 
-button {
+.boton-añadir {
   margin: 0px auto;
   width: 80%;
   padding: 10px;
@@ -146,15 +146,6 @@ button {
 * {
   margin: 0;
 }
-
-/* .carrito-salida {
-  position: absolute;
-  top: 69px;
-  right: -20px;
-  z-index: 10;
-  width: 50vw;
-  height: 100%;
-} */
 
 .caja-targeta-carrito {
   width: 35%;
@@ -188,3 +179,33 @@ button {
   box-shadow: 3px 8px 13px rgb(0, 0, 0);
   margin-right: 10px;
 }
+
+.boton-borrado {
+  margin: 0px auto;
+  width: 20%;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 3px 8px 13px rgb(0, 0, 0);
+  background-color: rgb(255, 95, 95);
+  border: 0px;
+}
+
+button {
+  margin: 0px auto;
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 3px 8px 13px rgb(0, 0, 0);
+  background-color: rgb(255, 95, 95);
+  border: 0px;
+}
+
+/* body button {
+  margin: auto;
+  width: 80%;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 3px 8px 13px rgb(0, 0, 0);
+  background-color: rgb(255, 95, 95);
+  border: 0px;
+} */

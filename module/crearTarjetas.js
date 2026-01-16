@@ -1,5 +1,7 @@
 import * as datos from "./leerDatos.js";
 let productos = await datos.leerDatos();
+console.log("hola");
+console.log(productos);
 let lista = JSON.parse(localStorage.getItem("listaCarrito")) || []; //creo el array en localStorage
 let contenedor = document.createElement("div");
 contenedor.classList.add("caja-padre-targeta");

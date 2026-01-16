@@ -2,8 +2,9 @@ import * as datos from "./leerDatos.js";
 
 let productos = await datos.leerDatos();
 
-let lista = JSON.parse(localStorage.getItem("listaCarrito"));
-
+let lista = JSON.parse(localStorage.getItem("listaCarrito")) || [];
+let total = 0;
+let totalTexto = document.createElement("h1");
 let carrito = [];
 
 for (let i = 0; i < productos.length; i++) {
@@ -25,6 +26,7 @@ titulo.classList.add("cabecera-productos");
 titulo.id = "cabecera-productos";
 document.body.appendChild(titulo);
 function crearElemtosCarrito(producto) {
+  total += parseInt(producto.price);
   let tarjeta = document.createElement("div");
   tarjeta.id = producto.id;
   tarjeta.classList.add("caja-targeta-carrito");
@@ -39,6 +41,7 @@ function crearElemtosCarrito(producto) {
 
   let boton = document.createElement("button");
   boton.textContent = "Borrar de la cesta";
+  boton.classList.add("boton-borrado");
 
   boton.addEventListener("click", () => {
     let id = Number(producto.id);
@@ -62,8 +65,11 @@ for (let i = 0; i < carrito.length; i++) {
 }
 let boton2 = document.createElement("button");
 boton2.textContent = "Borrar";
+boton2.classList.add("boton-borrado");
 boton2.addEventListener("click", () => {
   lista = [];
   localStorage.setItem("listaCarrito", JSON.stringify(lista));
 });
-document.body.appendChild(boton2);
+totalTexto.textContent = " TOTAL A PAGAR :" + total + " €";
+contenedor.appendChild(totalTexto);
+contenedor.appendChild(boton2);
